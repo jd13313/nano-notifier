@@ -16,7 +16,7 @@ void Sound::melody(Note* noteList, int noteCount) {
     for (unsigned int i = 0; i < noteCount - 1; i++) {
         // In order to calculate the correct note length we take 1 second and divide it by the type of note
         // for example: a quarter note is 1000 / 4, an eighth note 1000 / 8 etc.
-        int noteDuration = 2 * noteList[i].duration;
+        int noteDuration = noteList[i].duration / 1.5 ;
 
         // Call tone() with the current note of the melody with the calculated duration of the note.
         tone(PIN_BEEPER_DATA, noteList[i].note, noteDuration);
